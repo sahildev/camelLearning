@@ -8,19 +8,19 @@ import org.springframework.stereotype.Component;
 import com.spring.myapp.processor.TransactionTypeRouterProcessor;
 
 @Component
-public class CarsRoute extends RouteBuilder {
+public class TransactionRoute extends RouteBuilder {
 
 	@Autowired
-	private TransactionTypeRouterProcessor preProcessor;
+	private TransactionTypeRouterProcessor transactionTypeRouterprocessor;
 
 	@Override
 	public void configure() throws Exception {
-		from("direct:getCarsRoute")
-		.routeId("getCarsRoute")
-		.description("getCarsRoute")
-		.startupOrder(2)
+		from("direct:transactionProcessingRoute")
+		.routeId("transactionProcessingRoute")
+		.description("transactionProcessingRoute")
+		.startupOrder(3)
 		.log(LoggingLevel.INFO, "Camel body: ${body}")
-		//.process(preProcessor)
+		.process(transactionTypeRouterprocessor)
 		.log(LoggingLevel.INFO, "Successfully finished processing");
 	}
 

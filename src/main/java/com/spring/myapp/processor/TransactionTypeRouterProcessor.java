@@ -14,9 +14,9 @@ import org.springframework.stereotype.Component;
 import com.spring.myapp.service.PreProcessorService;
 
 @Component
-public class preProcessor implements Processor {
+public class TransactionTypeRouterProcessor implements Processor {
 
-	private static final Logger log = LoggerFactory.getLogger(preProcessor.class);
+	private static final Logger log = LoggerFactory.getLogger(TransactionTypeRouterProcessor.class);
 
 	@Autowired
 	PreProcessorService preprocessorService;

@@ -5,13 +5,13 @@ import org.apache.camel.builder.RouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.spring.myapp.processor.preProcessor;
+import com.spring.myapp.processor.TransactionTypeRouterProcessor;
 
 @Component
 public class CsvParseRoute extends RouteBuilder {
 	
 	@Autowired
-	private preProcessor preProcessor;
+	private TransactionTypeRouterProcessor preProcessor;
 
 	@Override
 	public void configure() throws Exception {
