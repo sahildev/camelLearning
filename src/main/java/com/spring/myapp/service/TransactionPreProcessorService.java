@@ -8,15 +8,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
-import com.spring.myapp.constant.ApplicationConstants;
-
 @Service
-public class PreProcessorService {
+public class TransactionPreProcessorService {
 	
 	@Autowired
 	private CsvToJsonParserService csvToJsonParserService;
 	
-	@Value("classpath:input.csv")
+	@Value("classpath:sample.csv")
 	private Resource inputFile;
 
 	public List<Map<String,String>> processInputFile(Map<String, Object> messageMap){

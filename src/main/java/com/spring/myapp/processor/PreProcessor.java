@@ -11,16 +11,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.spring.myapp.constant.ApplicationConstants;
-import com.spring.myapp.service.TransactionPreProcessorService;
+import com.spring.myapp.service.PreProcessorService;
 
 @Component
-public class TransactionTypeRouterProcessor implements Processor {
+public class PreProcessor implements Processor {
 
-	private static final Logger log = LoggerFactory.getLogger(TransactionTypeRouterProcessor.class);
+	private static final Logger log = LoggerFactory.getLogger(PreProcessor.class);
 
 	@Autowired
-	TransactionPreProcessorService preprocessorService;
+	PreProcessorService preprocessorService;
 
 	@Override
 	public void process(Exchange exchange) throws Exception {
@@ -43,11 +42,8 @@ public class TransactionTypeRouterProcessor implements Processor {
 		//log.info("Message Body :" + (String) messageBody);
 		Map<String, Object> messageMap = (Map<String, Object>) messageBody;
 
-		//List<Map<String, String>> inputRequestList = preprocessorService.processInputFile(messageMap);
+		List<Map<String, String>> inputRequestList = preprocessorService.processInputFile(messageMap);
 		
-		exchange.setProperty("type", messageMap.get(ApplicationConstants.TRANSACTION_PRODUCTMEASURE));
-		exchange.getIn().setBody(messageMap);
-
 	}
 
 }
