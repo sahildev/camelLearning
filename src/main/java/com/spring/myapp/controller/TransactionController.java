@@ -1,5 +1,8 @@
 package com.spring.myapp.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.camel.CamelContext;
 import org.apache.camel.ProducerTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +20,10 @@ public class TransactionController {
 
 	@RequestMapping(value = "/transaction/")
 	public void startCamel() {
-
-		producerTemplate.sendBody("direct:transactionProcessingRoute");
+		
+		Map<String,String> TriggerPathMap = new HashMap();
+		TriggerPathMap.put("path", "Triggered csv parser");
+		System.out.println("abc");
+		producerTemplate.sendBody("direct:transactionProcessingRoute",TriggerPathMap);
 	}
 }
