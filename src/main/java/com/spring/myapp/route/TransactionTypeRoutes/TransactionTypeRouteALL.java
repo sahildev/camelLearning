@@ -14,7 +14,7 @@ public class TransactionTypeRouteALL extends RouteBuilder {
 			.routeId("transactionTypeRouteALL")
 			.startupOrder(7)
 			//.log(LoggingLevel.INFO,"Camel body: ${body}")
-			.log(LoggingLevel.INFO,"Successfully finished processing all others");
+			.log(LoggingLevel.DEBUG,"Successfully finished processing all others");
 	}
 
 }

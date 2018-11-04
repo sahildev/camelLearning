@@ -13,8 +13,8 @@ public class TransactionTypeRouteOZ extends RouteBuilder {
 		from("direct:transactionTypeRouteOZ")
 			.routeId("transactionTypeRouteOZ")
 			.startupOrder(9)
-			.log(LoggingLevel.INFO,"Camel body: ${body}")
-			.log(LoggingLevel.INFO,"Successfully finished processing type OZ");
+			.log(LoggingLevel.DEBUG,"Camel body: ${body}")
+			.log(LoggingLevel.DEBUG,"Successfully finished processing type OZ");
 	}
 
 }

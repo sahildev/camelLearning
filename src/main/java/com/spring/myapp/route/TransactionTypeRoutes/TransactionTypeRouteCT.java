@@ -13,8 +13,8 @@ public class TransactionTypeRouteCT extends RouteBuilder {
 		from("direct:transactionTypeRouteCT")
 			.routeId("transactionTypeRouteCT")
 			.startupOrder(5)
-			.log(LoggingLevel.INFO,"Camel body: ${body}")
-			.log(LoggingLevel.INFO,"Successfully finished processing type CT");
+			.log(LoggingLevel.DEBUG,"Camel body: ${body}")
+			.log(LoggingLevel.DEBUG,"Successfully finished processing type CT");
 	}
 
 }
