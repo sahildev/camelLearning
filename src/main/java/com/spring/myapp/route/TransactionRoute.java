@@ -37,6 +37,7 @@ public class TransactionRoute extends RouteBuilder {
               .to("direct:transactionTypeRouteOZ")
           .otherwise()
               .to("direct:transactionTypeRouteALL")
+              .log("abc")
 		.log(LoggingLevel.INFO, "Successfully finished processing");
 	}
 
