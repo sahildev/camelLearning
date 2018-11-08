@@ -24,7 +24,6 @@ public class TransactionController {
 		Map<String,String> TriggerPathMap = new HashMap();
 		TriggerPathMap.put("path", "Triggered csv parser");
 		System.out.println("abc");
-		System.out.println("xyz");
 		producerTemplate.sendBody("direct:transactionProcessingRoute",TriggerPathMap);
 	}
 }
