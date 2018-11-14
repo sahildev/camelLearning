@@ -23,7 +23,13 @@ public class UserDataRestTemplateTest {
 
 		RestTemplate restTemplate = new RestTemplate();
 		Map<String, String> response = (Map<String, String>) restTemplate
+				.getForObject("https://randomuser.me/api", Map.class);
+		/*
+		 * Map<String, String> response = (Map<String, String>) restTemplate
+		 
 				.getForObject("http://services.groupkt.com/country/get/iso2code/IN", Map.class);
+				
+				*/
 		log.info("==== RESTful API Response using Spring RESTTemplate START =======");
 		log.info(response.toString());
 		log.info("==== RESTful API Response using Spring RESTTemplate END =======");
