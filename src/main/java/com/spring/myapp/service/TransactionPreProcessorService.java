@@ -14,7 +14,7 @@ public class TransactionPreProcessorService {
 	@Autowired
 	private CsvToJsonParserService csvToJsonParserService;
 	
-	@Value("classpath:sample.csv")
+	@Value("classpath:sampleLess.csv")
 	private Resource inputFile;
 
 	public List<Map<String,String>> processInputFile(Map<String, Object> messageMap){

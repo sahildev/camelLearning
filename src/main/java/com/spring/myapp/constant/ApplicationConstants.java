@@ -18,4 +18,9 @@ public class ApplicationConstants {
 	public static String TRANSACTION_PURCHASEAMOUNT = "author";
 	
 	
+	/**
+	 * User Data service constants
+	 */
+
+	
 }
