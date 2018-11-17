@@ -20,7 +20,7 @@ public class UserController {
 	 * 
 	 * @return
 	 */
-	@GetMapping("/getUser")
+	@GetMapping("/user")
 	public Map<String, Object> getRandomUser() {
 
 		return userService.getRandomUser();

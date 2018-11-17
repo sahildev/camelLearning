@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.spring.myapp.aws.SqsQueue;
 import com.spring.myapp.service.TransactionPreProcessorService;
 import com.spring.myapp.service.UserService;
 
@@ -22,6 +23,9 @@ public class TransactionUserIntegrationProcessor implements Processor {
 	
 	@Autowired
 	UserService userService;
+	
+	@Autowired
+	SqsQueue sqsQueue;
 
 
 	@Override
@@ -34,7 +38,12 @@ public class TransactionUserIntegrationProcessor implements Processor {
 		
 		userDataMap.put("transactionMap", inputParamMap);
 		
-		log.info("Transaction DataSet : " + userDataMap);
+		//log.info("Transaction DataSet : " + userDataMap);
+		String userDataString = userDataMap.toString();
+		
+		sqsQueue.putMessage(userDataString);
+		
+		
 		
 	}
 
