@@ -23,7 +23,6 @@ public class CsvParserController {
 		
 		Map<String,String> TriggerPathMap = new HashMap();
 		TriggerPathMap.put("path", "Triggered csv parser");
-		System.out.println("abc");
 		producerTemplate.sendBody("direct:csvParseRoute", TriggerPathMap);
 	}
 }
