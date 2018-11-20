@@ -9,7 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 @RestController
+@Api(value="CsvParserController", description="Operations pertaining to CSV Parsing")
 public class CsvParserController {
 	
 	@Autowired
@@ -18,6 +22,7 @@ public class CsvParserController {
 	@Autowired
 	ProducerTemplate producerTemplate;
 	
+	@ApiOperation(value = "Parse a given Csv")
 	@RequestMapping(value = "/csv/")
 	public void startCamel() {
 		

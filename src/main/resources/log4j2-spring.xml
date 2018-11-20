@@ -11,16 +11,16 @@
 				pattern="%highlight{%d{HH:mm:ss.SSS} %-5level %logger{36}.%M() @%L - %msg%n}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=black, DEBUG=green bold, TRACE=blue}" />
 		</Console>
 
-		<RollingFile name="RollingFile" fileName="./logs/spring-boot-logger-log4j2.log"
-			filePattern="./logs/$${date:yyyy-MM}/spring-boot-logger-log4j2-%d{-dd-MMMM-yyyy}-%i.log.gz">
+		<RollingFile name="RollingFile" fileName="D:/apps/logs/camelLearning.log"
+			filePattern="D:/apps/logs/$${date:yyyy-MM}/camelLearning-%d{-dd-MMMM-yyyy}-%i.log.gz">
 			<PatternLayout>
 				<pattern>%d %p %C{1.} [%t] %m%n</pattern>
 			</PatternLayout>
 			<Policies>
 				<!-- rollover on startup, daily and when the file reaches 10 MegaBytes -->
-				<OnStartupTriggeringPolicy />
+				<!-- <OnStartupTriggeringPolicy /> -->
 				<SizeBasedTriggeringPolicy size="10 MB" />
-				<TimeBasedTriggeringPolicy />
+				<!-- <TimeBasedTriggeringPolicy /> -->
 			</Policies>
 		</RollingFile>
 	</Appenders>
