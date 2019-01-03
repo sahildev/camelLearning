@@ -40,12 +40,12 @@ public class TransactionPreProcessor implements Processor {
 			// + throw Exception
 		}
 		//log.info("Message Body :" + (String) messageBody);
-		Map<String, Object> messageMap = (Map<String, Object>) messageBody;
+		Map<String, String> messageMap = (Map<String, String>) messageBody;
 
-		List<Map<String, String>> inputRequestList = preprocessorService.processInputFile(messageMap);
+		//List<Map<String, String>> inputRequestList = preprocessorService.processInputFile(messageMap);
 		
 		//exchange.setProperty("type", inputRequestList.get(ApplicationConstants.TRANSACTION_PRODUCTMEASURE));
-		exchange.getIn().setBody(inputRequestList);
+		//exchange.getIn().setBody(inputRequestList);
 	}
 
 }

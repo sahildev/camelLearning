@@ -21,7 +21,8 @@ public class TransactionRoute extends RouteBuilder {
 		from("direct:transactionProcessingRoute")
 		.routeId("transactionProcessingRoute")
 		.description("transactionProcessingRoute")
-		.startupOrder(3)
+		.startupOrder(13)
+		.autoStartup(false)
 		.log(LoggingLevel.INFO, "Camel body: ${body}")
 		.process(preprocessor)
 		.split(body())
@@ -38,7 +39,9 @@ public class TransactionRoute extends RouteBuilder {
           .otherwise()
               .to("direct:transactionTypeRouteALL")
               .log("abc")
-		.log(LoggingLevel.INFO, "Successfully finished processing");
+		.log(LoggingLevel.INFO, "Successfully finished processing")
+		.end();
+		
 	}
 
 }

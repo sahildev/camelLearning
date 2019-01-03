@@ -31,7 +31,7 @@ public class TransactionUserIntegrationProcessor implements Processor {
 	@Override
 	public void process(Exchange exchange) throws Exception {
 
-		log.debug("In [TransactionUserIntegrationProcessor.process]");
+		log.info("In [TransactionUserIntegrationProcessor.process]");
 
 		Map<String,String> inputParamMap= (Map<String, String>) exchange.getIn().getBody();
 		Map<String,Object> userDataMap = userService.getRandomUser();
@@ -41,7 +41,7 @@ public class TransactionUserIntegrationProcessor implements Processor {
 		//log.info("Transaction DataSet : " + userDataMap);
 		String userDataString = userDataMap.toString();
 		
-		sqsQueue.putMessage(userDataString);
+		//sqsQueue.putMessage(userDataString);
 		
 		
 		
